@@ -1,0 +1,286 @@
+1. Write a program to check whether a given number is positive or non-positive.
+#include<stdio.h>
+   int main()
+   {
+      int x;
+      printf("enter a number=");
+      scanf("%d",&x);
+      if(x<=0)
+      printf("non positive");
+      else 
+      printf("positive");
+      return 0;
+   }
+   
+2. Write a program to check whether a given number is divisible by 5 or not
+#include<stdio.h>
+int main()
+{
+   int x;
+   printf("enter a number=");
+   scanf("%d",&x);
+   if(x%5==0||x%5==5)
+   printf("it is divisible by 5");
+   else
+   printf("it is not divisible by 5");
+}
+   
+3. Write a program to check whether a given number is an even number or an odd
+number.
+#include<stdio.h>
+int main()
+{
+   int x;
+   printf("enter a number =");
+   scanf("%d",&x);
+   x%2==0?printf("even"): printf("odd"); 
+}
+
+4. Write a program to check whether a given number is an even number or an odd
+number without using % operator.
+#include<stdio.h>
+int main()
+{
+ int n,result;
+ printf("enter a number =");
+ scanf("%d",&n);
+ result=n&1;
+ result==0?printf("even"):printf("odd");
+}
+
+5. Write a program to check whether a given number is a three-digit number or not.
+#include<stdio.h>
+int main()
+{
+ int x,count=0;
+ printf("enter a number=");
+ scanf("%d",&x);
+ while(x!=0)
+ {
+    x=x/10;
+    count++;
+ }
+ count==3?printf("3 digit number"):printf("not a 3 digit number");
+ return 0;
+}
+
+6. Write a program to print greater between two numbers. Print one number of both are
+the same.
+#include<stdio.h>
+int main()
+{
+   int x,y;
+   printf("enter two numbers=");
+   scanf("%d%d",&x,&y);
+   (x>=y && y<=x)?printf("\n %d",x):printf("\n %d",y);
+   return 0;
+}
+
+7. Write a program to check whether roots of a given quadratic equation are real &
+distinct, real & equal or imaginary roots
+#include<stdio.h>
+int main()
+{
+   int a,b,c,D;
+   printf("enter values of a b and c \n");
+   scanf("%d%d%d",&a,&b,&c);
+   D=b*b-4*a*c;
+   if(D>0)
+   printf("roots are real and distinct");
+   else if(D<0)
+   printf("roots are imaginary");
+   else
+   printf("roots are real and equal");
+   return 0;
+}
+
+8. Write a program to check whether a given year is a leap year or not.
+#include<stdio.h>
+int main()
+{
+   int year;
+   printf("enter year\n");
+   scanf("%d",&year);
+   if(year%4==0)
+   {
+      if(year%100==0)
+      {
+         if(year%400==0)
+         printf("leap year");
+         else
+         printf("non leap year");
+      }
+      else 
+      printf("leap year");
+   }
+   else
+   printf("non leap year");
+}
+
+9. Write a program to find the greatest among three given numbers. Print number once
+if the greatest number appears two or three times.
+#include<stdio.h>
+int main()
+{
+   int a,b,c;
+   printf("enter three numbers\n");
+   scanf("%d%d%d",&a,&b,&c);
+   if(a<=c && b<=c)
+   printf("%d",c);
+   else if(a<=b && c<=b)
+   printf("%d",b);
+   else
+   printf("%d",a);
+   return 0;
+}
+
+10. Write a program which takes the cost price and selling price of a product from the
+user. Now calculate and print profit or loss percentage.
+#include<stdio.h>
+int main()
+{
+   int SP,CP,profit,loss;
+   double a;
+   printf("enter C.p and S.p \n");
+   scanf("%d%d",&CP,&SP);
+   if(SP>CP)
+   {
+      profit=SP-CP;
+      a=profit*100/CP;
+      printf("profit=%lf %%",a);
+   }
+   else
+   {
+   loss=CP-SP;
+   a=loss*100/CP;
+   printf("loss=%lf %%",a);
+   }
+   return 0;
+}
+
+11. Write a program to take marks of 5 subjects from the user. Assume marks are given
+out of 100 and passing marks is 33. Now display whether the candidate passed the
+examination or failed.
+#include<stdio.h>
+int main()
+{
+   int a,b,c,d,e;
+   printf("enter marks of 5 subjects\n");
+   scanf("%d\n%d\n%d\n%d\n%d",&a,&b,&c,&d,&e);
+   if(a>=33 && b>=33 && c>=33 &&  d>=33 && e>=33)
+   printf("passed");
+   else
+   printf("failed");
+   return 0;
+}
+  
+12. Write a program to check whether a given alphabet is in uppercase or lowercase.
+#include<stdio.h>
+int main()
+{
+   char x;
+   printf("enter any uppercase or lowercase letter\n");
+   scanf("%c",&x);
+   if(x>='A' && x<='Z')
+   printf("uppercase letter");
+   else if(x>='a' && x<='z')
+   printf("lowercase letter");
+   return 0;
+}
+
+13. Write a program to check whether a given number is divisible by 3 and divisible by 2.
+#include<stdio.h>
+int main()
+{
+    int x;
+    printf("enter a number\n");
+    scanf("%d",&x);
+    if(x%2==0 && x%3==0)
+    printf("divisible by 2 and 3");
+    return 0;
+}
+
+14. Write a program to check whether a given number is divisible by 7 or divisible by 3.
+#include<stdio.h>
+int main()
+{
+    int x;
+    printf("enter a number\n");
+    scanf("%d",&x);
+    if(x%7==0 || x%3==0)
+    {
+      x%7==0?printf("divisible by 7"):printf("divisible by 3");
+
+    }
+    return 0;
+}
+15. Write a program to check whether a given number is positive, negative or zero.
+#include<stdio.h>
+int main()
+{
+    int x;
+    printf("enter a number\n");
+    scanf("%d",&x);
+    if(x>0 || x==0)
+    {
+      x>0?printf("positive"):printf("zero");
+    }
+    else
+    printf("negative");
+    return 0;
+}
+
+16. Write a program to check whether a given character is an alphabet (uppercase), an
+alphabet (lower case), a digit or a special character.
+#include<stdio.h>
+int main()
+{
+   char x;
+   printf("enter any uppercase or lowercase letter\n");
+   scanf("%c",&x);
+   if(x>='A' && x<='Z')
+   printf("uppercase letter");
+   else if(x>='a' && x<='z')
+   printf("lowercase letter");
+   else
+   printf("digit or a special character");
+   return 0;
+}
+
+17. Write a program which takes the length of the sides of a triangle as an input. Display
+whether the triangle is valid or not.
+
+
+18. Write a program which takes the month number as an input and display number of
+days in that month
+#include<stdio.h>
+int main()
+{  int n;
+   do
+   {
+   printf("Enter a month number =");
+   scanf("%d",&n);
+   switch(n)
+   {
+     case 2:
+        printf("28 or 29 days");
+        break;
+     case 8:
+        printf("31 days");
+        break;
+   }
+   if(n<8)
+   {
+      if(n%2!=0)
+      printf("31 days");
+      else if(n!=2)
+      printf("30 days");
+   }
+   else if(n==9 || n==11)
+   printf("30 days");
+   else if(n==10 || n==12)
+   printf("31 days");
+   printf("\n");
+}while(n<=12);
+}
+  
