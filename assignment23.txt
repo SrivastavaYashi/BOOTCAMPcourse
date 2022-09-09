@@ -1,0 +1,132 @@
+1. Write a C++ program to print Hello MySirG on the screen.
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout<<"Hello MySirG";
+    return 0;
+}
+
+2. Write a C++ program to print Hello on the first line and MySirG on the second line
+using endl.
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout<<"Hello ";
+    cout<<endl;
+    cout<<"MySirG ";
+    return 0;
+}
+
+3. Write a C++ program to calculate the sum of two numbers.
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int a,b;
+    cout<<"Enter two numbers";
+    cout<<endl;
+    cin>>a>>b;
+    cout<<"Sum is "<<a+b;
+    cout<<endl;
+    return 0;
+}
+
+4. Write a C++ program to calculate the area of a circle
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int r;
+    cout<<"Enter radius =";
+    cin>>r;
+    cout<<"Area is "<<3.14*r*r;
+    cout<<endl;
+    return 0;
+}
+
+5. Write a C++ program to calculate the volume of a cuboid.
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int l,b,h;
+    cout<<"Enter length,breadth and height of cuboid in centimeters ";
+    cout<<endl;
+    cin>>l>>b>>h;
+    cout<<"Volume is "<<l*b*h<<" cm cube ";
+    cout<<endl;
+    return 0;
+}
+
+6. Write a C++ program to calculate an average of 3 numbers.
+#include<iostream>
+using namespace std;
+int main()
+{   
+    float x,y,z;
+    cout<<"Enter three numbers ";
+    cout<<endl;
+    cin>>x>>y>>z;
+    cout<<"average is "<<(x+y+z)/3;
+    cout<<endl;
+    return 0;
+}
+
+7. Write a C++ program to calculate the square of a number
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int x;
+    cout<<"Enter a number= ";
+    cout<<endl;
+    cin>>x;
+    cout<<"square is "<<x*x;
+    cout<<endl;
+    return 0;
+}
+
+8. Write a C++ program to swap values of two int variables without using third variable
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int x=10,y=25;
+    x=35-x;
+    y=35-y;
+    cout<<"swapped numbers are "<<"x="<<x<<" y="<<y;
+    cout<<endl;
+    return 0;
+}
+
+9. Write a C++ program to find the maximum of two numbers.
+#include<iostream>
+using namespace std;
+int main()
+{   
+    int x,y;
+    cout<<"Enter two numbers= ";
+    cin>>x>>y;
+    if(x>y)
+    cout<<"max value is "<<x;
+    else
+    cout<<"max value is "<<y;
+    cout<<endl;
+    return 0;
+}
+
+10. Write a C++ program to add all the numbers of an array of size 10.
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[10],sum=0;
+    cout<<"enter 10 numbers\n";
+    for(int i=0;i<=9;i++)
+   {    cin>>arr[i];
+        sum=sum+arr[i];
+   }
+   cout<<"sum of 10 numbers is "<<sum;
+}
