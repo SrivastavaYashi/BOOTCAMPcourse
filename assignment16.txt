@@ -1,0 +1,224 @@
+1. Write a program to calculate the sum of two matrices each of order 3x3.
+#include<stdio.h>
+int main()
+{
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  int b[3][3]={10,11,12,13,14,15,16,17,18};
+  for(int i=0;i<3;i++)
+{
+  for(int j=0;j<3;j++)
+  printf("%d ",a[i][j]+b[i][j]);
+  printf("\n");
+}  
+}
+
+2. Write a program to calculate the product of two matrices each of order 3x3.
+#include<stdio.h>
+void product(int b[][3],int d[][3]);
+int main()
+{
+  int a[3][3]={{1,1,1},{2,1,1},{3,0,1}};
+  int b[3][3]={{1,1,1},{2,1,1},{3,0,1}};
+  product(a,b);
+}
+ void product(int b[][3],int d[][3])
+ {
+  int sum,c[3][3];
+  for(int i=0;i<3;i++)
+   for(int j=0;j<3;j++)
+    {
+     for(int k=0;k<3;k++)
+     sum=sum+b[i][k]*d[k][j];
+     c[i][j]=sum;
+     sum=0;
+    }
+ for(int i=0;i<3;i++)
+  {
+    for(int j=0;j<3;j++)
+    printf("%d ",c[i][j]);
+    printf("\n");
+  }
+ }
+
+3. Write a program in C to find the transpose of a given matrix.
+#include<stdio.h>
+int main()
+{ int sum=0;
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  int b[3][3];
+  for(int i=0;i<3;i++)
+  for(int j=0;j<3;j++)
+  b[j][i]=a[i][j];
+
+ for(int i=0;i<3;i++)
+{
+ for(int j=0;j<3;j++)
+ printf("%d ",b[i][j]);
+ printf("\n");
+}
+}
+
+4. Write a program in C to find the sum of right diagonals of a matrix.
+#include<stdio.h>
+int main()
+{ int sum=0,j=2;
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  for(int i=0;i<3;i++)
+  {
+    sum=sum+a[i][j];
+    j--;
+  }
+printf("sum of right diagonal of matrix is %d",sum);
+}
+
+5. Write a program in C to find the sum of left diagonals of a matrix.
+#include<stdio.h>
+int main()
+{ int sum=0,j=0;
+  int a[3][3]={2,2,3,4,5,6,7,8,10};
+  for(int i=0;i<3;i++)
+{
+    sum=sum+a[i][j];
+    j++;
+}   
+printf("sum of left diagonal of matrix is %d",sum);
+}
+
+6. Write a program in C to find the sum of rows and columns of a Matrix.
+#include<stdio.h>
+int main()
+{ 
+  int s1,k=0,s2=0;
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  for(int i=0;i<3;i++)
+  {
+   s1=0;
+   for(int j=0;j<3;j++)
+   s1=s1+a[i][j];
+   printf("\nsum of row %d is  %d",i,s1);
+  }
+
+  printf("\n");
+  for(int j=0;j<3;j++)
+   {
+    for(int i=0;i<3;i++)
+    s2=s2+a[i][k];
+    k++;
+    printf("\nsum of column %d is s1 %d",j,s2);
+    s2=0;
+   }   
+} 
+ 
+7. Write a program in C to print or display the lower triangular of a given matrix.
+#include<stdio.h>
+int main()
+{ 
+  int t;
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  for(int i=0;i<3;i++)
+  { t=0;
+  for(int j=0;j<3;j++)
+  if(i<j)
+  {
+    t=a[i][j];
+    a[i][j]=0;
+  }
+  }
+  
+  printf("lower triangular matrix\n");
+  for(int i=0;i<3;i++)
+  {for(int j=0;j<3;j++)
+  printf("%d ",a[i][j]);
+  printf("\n");
+  }
+}  
+
+8. Write a program in C to print or display an upper triangular matrix.
+#include<stdio.h>
+int main()
+{ 
+  int t;
+  int a[3][3]={1,2,3,4,5,6,7,8,9};
+  for(int i=0;i<3;i++)
+  { t=0;
+  for(int j=0;j<3;j++)
+  if(i>j)
+  {
+    t=a[i][j];
+    a[i][j]=0;
+  }
+  }
+  
+  printf("upper triangular matrix\n");
+  for(int i=0;i<3;i++)
+  {for(int j=0;j<3;j++)
+  printf("%d ",a[i][j]);
+  printf("\n");
+  }
+}  
+
+9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+#include<stdio.h>
+void rotate(int z[],int size);
+int main()
+{
+ int m,n;
+ printf("enter m and n values\n");
+ scanf("%d%d",&m,&n);
+ int a[m][n],count=0;
+ printf("enter %d values\n",m*n);
+
+ for(int i=0;i<m;i++)
+ for(int j=0;j<n;j++)
+ scanf("%d",&a[i][j]);
+
+ printf("\nentered matrix\n");
+ for(int i=0;i<m;i++)
+ {
+  for(int j=0;j<n;j++)
+  printf("%d ",a[i][j]);
+  printf("\n");
+ }
+
+ for(int i=0;i<m;i++)
+ for(int j=0;j<n;j++)
+ if(a[i][j]==0)
+ count++;
+
+ if(count>(m*n)/2)
+ printf("\nmatrix is sparse");
+ else
+ printf("\ndense matrix");
+}
+
+10. Write a program in C to find the row with maximum number of 1s.
+#include<stdio.h>
+int max_1_row(int b[][3]);
+int main()
+{
+  int a[3][3]={{1,1,1},{2,1,1},{3,0,1}},x;
+  for(int i=0;i<3;i++)
+  {
+    for(int j=0;j<3;j++)
+    printf("%d ",a[i][j]);
+    printf("\n");
+  }
+  x=max_1_row(a);
+  printf("row with maximum 1's is %d",x);
+}
+ int max_1_row(int b[][3])
+ {
+  int sum,max=0,index;
+  for(int i=0;i<3;i++)
+  { sum=0;
+    for(int j=0;j<3;j++)
+    if(b[i][j]==1)
+    sum=sum+b[i][j];
+    if(sum>max)
+     {
+      max=sum;
+      index=i;
+     }
+  }
+  return index;
+ }
