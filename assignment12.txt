@@ -1,0 +1,193 @@
+1. Write a recursive function to print first N natural numbers
+#include<stdio.h>
+void natural(int);
+int main()
+{   
+    int x;
+    printf("Enter a number=");
+    scanf("%d",&x);
+    natural(x);
+}
+void natural(int x)
+{
+    if(x>0)
+    {
+    natural(x-1);
+    printf("%d ",x);
+    }
+}
+
+2. Write a recursive function to print first N natural numbers in reverse order
+#include<stdio.h>
+void natural_reverse(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_reverse(n);
+}
+void natural_reverse(int x)
+{
+  if(x>0)
+  {
+     printf("%d ",x);
+    natural_reverse(x-1);
+  }
+}
+
+3. Write a recursive function to print first N odd natural numbers
+#include<stdio.h>
+void natural_odd(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_odd(n*2);
+}
+void natural_odd(int x)
+{
+  if(x>0)
+  {
+    natural_odd(x-1);
+    if((x%2)!=0)
+    printf("%d ",x);
+  }
+}
+
+4. Write a recursive function to print first N odd natural numbers in reverse order
+#include<stdio.h>
+void natural_odd(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_odd(n*2);
+}
+void natural_odd(int x)
+{
+  if(x>0)
+  {
+    if((x%2)!=0)
+    printf("%d ",x);
+    natural_odd(x-1);
+  }
+}
+
+5. Write a recursive function to print first N even natural numbers
+#include<stdio.h>
+void natural_even(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_even(n*2);
+}
+void natural_even(int x)
+{
+  if(x>0)
+  {
+ 
+    natural_even(x-1);
+    if((x%2)==0)
+    printf("%d ",x);
+  }
+}
+
+6. Write a recursive function to print first N even natural numbers in reverse order
+#include<stdio.h>
+void natural_even(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_even(n*2);
+}
+void natural_even(int x)
+{
+  if(x>0)
+  {
+    if((x%2)==0)
+    printf("%d ",x);
+    natural_even(x-1);
+  }
+}
+
+7. Write a recursive function to print squares of first N natural numbers
+#include<stdio.h>
+void natural_square(int x);
+int main()
+{
+  int n;
+  printf("enter value of n=");
+  scanf("%d",&n);
+  natural_square(n);
+}
+void natural_square(int x)
+{
+  printf("squares of %d natural numbers\n",x);
+  if(x>0)
+  {
+    natural_square(x-1);
+     printf("%d ",x*x);
+  }
+}
+
+8. Write a recursive function to print binary of a given decimal number
+#include<stdio.h>
+void dtob(int n);
+int main()
+{
+  int num;
+  printf("enter a num=");
+  scanf("%d",&num);
+  dtob(num);
+}
+void dtob(int n)
+{ 
+  if(n==0)
+  return;
+  dtob(n/2);
+  printf("%d",n%2);
+}
+
+9. Write a recursive function to print octal of a given decimal number
+#include<stdio.h>
+void decimal_to_octal(int n);
+int main()
+{
+  int num;
+  printf("enter a num=");
+  scanf("%d",&num);
+  decimal_to_octal(num);
+}
+void decimal_to_octal(int n)
+{ 
+  if(n==0)
+  return;
+  decimal_to_octal(n/8);
+  printf("%d",n%8);
+}
+
+10. Write a recursive function to print reverse of a given number
+#include<stdio.h>
+void reverse_num(int x);
+int main()
+{
+  int n,x;
+  printf("enter number=");
+  scanf("%d",&n);
+  reverse_num(n);
+}
+void reverse_num(int x)
+{
+  if(x>0)
+  {
+    printf("%d",x%10);
+    reverse_num(x/10);
+  }
+}
