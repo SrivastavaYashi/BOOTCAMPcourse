@@ -1,0 +1,266 @@
+1. Write a function to calculate LCM of two numbers. (TSRS)
+#include<stdio.h>
+int lcm(int , int);
+int main()
+{   
+    int x,y,z;
+    printf("Enter two numbers=");
+    scanf("%d %d",&x,&y);
+    z=lcm(x,y);
+    printf("LCM is %d",z);
+}
+int lcm(int a,int b)
+{
+  int value;
+  value=(a<b)?a:b;
+  for(int i=2;i<=value;i++)
+  if(a%i==0 && b%i==0)
+  return i;
+}
+
+2. Write a function to calculate HCF of two numbers. (TSRS)
+#include<stdio.h>
+int hcf(int , int);
+int main()
+{   
+    int x,y,z;
+    printf("Enter two numbers=");
+    scanf("%d %d",&x,&y);
+    z=hcf(x,y);
+    printf("HCF is %d",z);
+    return 0;
+}
+int hcf(int a,int b)
+{
+  int val;
+  val=(a<b)?a:b;
+  while(val>1)
+  {
+  if(a%val==0 && b%val==0)
+    break;
+    val--;
+  }
+  if(val>1)
+  return val;
+  else
+  return 1;
+}
+
+3. Write a function to check whether a given number is Prime or not. (TSRS)
+#include<stdio.h>
+int prime(int);
+int main()
+{   
+    int x,z;
+    printf("Enter a number=");
+    scanf("%d",&x);
+    if(x==1)
+    printf("1 is not a prime number");
+    else
+  {
+     z=prime(x);
+    (z==0)? printf("%d is not a prime number",x):printf("%d is a prime number",x);
+  } 
+    return 0;
+}
+int prime(int a)
+{
+  int i;
+  for( i=2;1;i++)
+  if(a%i==0)
+  break;
+  if(a==i)
+  return a;
+  else
+  return 0;
+}
+
+4. Write a function to find the next prime number of a given number. (TSRS)
+#include<stdio.h>
+int prime(int);
+int main()
+{   
+    int x,z;
+    printf("Enter a number=");
+    scanf("%d",&x);
+    if(x==1)
+    printf("1 is not a prime number");
+    else
+  {
+     z=prime(++x);
+     printf("next prime number is %d",z);
+  } 
+    return 0;
+}
+int prime(int a)
+{
+  int d;
+  while(1)
+  {
+    for(int i=2;i<=a;i++)
+    if(a%i==0)
+    {
+      d=i;
+      break;
+    }
+      if(d==a)
+      break;
+      else
+      a++;
+  }
+  return d;
+}
+
+5. Write a function to print first N prime numbers (TSRN)
+#include<stdio.h>
+void prime(int);
+int main()
+{   
+    int n,z;
+    printf("Enter value of N=");
+    scanf("%d",&n);
+    prime(n);
+    return 0;
+}
+void prime(int count)
+{
+  int p=2,d;
+  while(count)
+  {
+   for(int i=2;i<=p;i++)
+    if(p%i==0)
+    {
+      d=i;
+      break;
+    }
+    if(d==p)
+    {
+      printf("%d ",p);
+      count--;
+    }
+    p++;
+  }  
+}
+
+6. Write a function to print all Prime numbers between two given numbers. (TSRN)
+#include<stdio.h>
+void prime(int,int);
+int main()
+{   
+    int a,b;
+    printf("Enter values of a and b=");
+    scanf("%d%d",&a,&b);
+    printf("prime numbers entered between two numbers are: ");
+    prime(++a,b);
+    return 0;
+}
+void prime(int p,int c)
+{
+  int d;
+  while(p<c)
+  {
+   for(int i=2;i<=p;i++)
+    if(p%i==0)
+    {
+      d=i;
+      break;
+    }
+    if(d==p)
+    {
+      printf("%d ",p);
+    }
+    p++;
+  }  
+}
+
+7. Write a function to print first N terms of Fibonacci series (TSRN)
+#include<stdio.h>
+int fib(int n);
+int main()
+{
+ int x=5,result;
+ for(int i=0;i<x;i++)
+ {
+ result=fib(i);
+ printf(" %d",result);
+ }
+}
+int fib(int n)
+{
+  if(n==0)
+  return 0;
+
+  if(n==1)
+  return 1;
+
+  return fib(n-2)+fib(n-1);
+}
+
+8. Write a function to print PASCAL Triangle. (TSRN)
+#include<stdio.h>
+int combination(int n,int r)
+{
+  return fact(n)/(fact(r)*fact(n-r));
+}
+int fact(int x)
+{
+  int m=1;
+  for(int i=x;i>=1;i--)
+  m=m*i;
+  return m;
+}
+void pascal(int N)
+{
+    int i;
+  for( i=0;i<=N;i++)
+  {
+   for(int p=0;p<=N-i;p++)
+   printf(" ");
+
+   for(int j=0;j<=i;j++)
+   {printf("%d",combination(i,j));
+   printf(" ");}
+
+   printf("\n");
+  }
+}
+int main()
+{
+  int n,r;
+  printf("enter value of n =");
+  scanf("%d",&n);
+  pascal(n);
+}
+
+9. Write a program in C to find the square of any number using the function.
+#include<stdio.h>
+int square(int);
+int main()
+{   
+    int n;
+    printf("Enter a number=");
+    scanf("%d",&n);
+    printf("square of %d is %d",n,square(n));
+    return 0;
+}
+int square(int n) 
+{
+  return n*n;
+}
+
+10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the
+function.
+#include<stdio.h>
+int fact(int x)
+{
+  int m=1;
+  for(int i=x;i>=1;i--)
+  m=m*i;
+}
+int main()
+{
+ int sum=0;
+ for(int i=1;i<=5;i++)
+ sum=sum+(fact(i)/i);
+ printf("sum of series is %d",sum);
+}
