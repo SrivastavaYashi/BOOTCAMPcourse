@@ -15,11 +15,11 @@ int main()
   { int i,t=0;
     char str[50];
     printf("enter a string\n");
-    fgets(str,20,stdin);
+    fgets(str,49,stdin);
     char m;
-    printf("enter a chracter from the given string\n");
+    printf("enter a character from the entered string\n");
     scanf("%c",&m);
-    for(int i=0;str[i];i++)
+    for(int i=0;str[i];i++)  //ascii code of ' ' is 32
     if(m==str[i])
     t++;
     printf("occurence of character %c is %d",m,t);
