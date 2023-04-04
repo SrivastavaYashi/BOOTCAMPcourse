@@ -9,10 +9,8 @@ Explanation : New string should be AB
 Input : ABABABAB
 Output : 0
 Explanation : There are no consecutive repeating characters.
-
-
-//CODE
-
+ 
+//myapproach
 #include <iostream>
 using namespace std;
 #include<string>
@@ -39,5 +37,26 @@ int main() {
  
  //new length of str
  cout<<"count="<<count<<endl<<"string="<<str;
+}
+
+
+//gfg approach
+#include <iostream>
+using namespace std;
+#include<string>
+int minsteps(string str)
+{
+    int steps=0;
+    
+    for(int i=0;i<str.length()-1;i++)
+       if(str[i]==str[i+1])
+         steps++;
+         
+    return steps;     
+}
+int main() {
+ string str="AAABBB";
+ string str1="ABABABAB";
+ cout<<"minsteps="<<minsteps(str1);
  
 }
