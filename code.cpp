@@ -1,3 +1,18 @@
+Given a string, find minimum number of deletions required so that there will be no two consecutive repeating characters in the string.
+
+Examples: 
+
+Input : AAABBB
+Output : 4
+Explanation : New string should be AB
+
+Input : ABABABAB
+Output : 0
+Explanation : There are no consecutive repeating characters.
+
+
+//CODE
+
 #include <iostream>
 using namespace std;
 #include<string>
